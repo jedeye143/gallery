@@ -35,9 +35,11 @@ export default function ArtworkQuickView({ artwork, isOpen, onClose }) {
     };
   }, [isOpen, artwork, onClose]);
 
-  useEffect(() => {
+  const [prevArtwork, setPrevArtwork] = useState(artwork);
+  if (artwork !== prevArtwork) {
+    setPrevArtwork(artwork);
     setActiveImgIdx(0);
-  }, [artwork]);
+  }
 
   if (!isOpen || !artwork) return null;
 

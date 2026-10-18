@@ -79,7 +79,7 @@ export default function ArtworkInfo({ artwork }) {
         {activeTab === "overview" && (
           <div className={styles.tabContent}>
             <blockquote className={styles.curatorialQuote}>
-              "{artwork.description}"
+              &ldquo;{artwork.description}&rdquo;
             </blockquote>
 
             <div className={styles.quickSpecsGrid}>
