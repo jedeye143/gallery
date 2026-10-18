@@ -139,7 +139,7 @@ export default function ContactPage() {
             /* ── Form ── */
             <div className={styles.formWrapper}>
               <div className={styles.formHeader}>
-                <span className={styles.formEyebrow}>WE'D LOVE TO HEAR FROM YOU</span>
+                <span className={styles.formEyebrow}>WE&apos;D LOVE TO HEAR FROM YOU</span>
                 <h2 className={styles.formTitle}>SEND AN INQUIRY</h2>
               </div>
 

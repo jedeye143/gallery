@@ -143,7 +143,7 @@ export default function ArtworkInfo({ artwork }) {
                 This artwork is accompanied by a signed Certificate of Authenticity issued directly by Dawson Wells Gallery and verified by the artist’s studio.
               </p>
               <ul className={styles.certList}>
-                <li>Direct provenance from artist's studio archive</li>
+                <li>Direct provenance from artist&apos;s studio archive</li>
                 <li>Museum-grade conservation packaging & climate crate</li>
                 <li>Complimentary insured global white-glove transport</li>
               </ul>
