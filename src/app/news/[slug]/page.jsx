@@ -19,6 +19,28 @@ export async function generateMetadata({ params }) {
   return {
     title: `${article.title} | Dawson Wells Gallery`,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://dawsonwellsgallery.com/news/${slug}`,
+      siteName: "Dawson Wells Gallery",
+      images: [
+        {
+          url: article.image,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [article.image],
+    },
   };
 }
 

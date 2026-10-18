@@ -37,9 +37,9 @@ export const metadata = {
     "Art Collecting",
   ],
   openGraph: {
-    title: "Dawson Wells Gallery",
+    title: "Dawson Wells Gallery | Modern & Contemporary Art",
     description:
-      "Premier international gallery specializing in Modern and Contemporary Art.",
+      "Premier international gallery specializing in Modern and Contemporary Art across photography, oil paintings, drawings, ceramics, and prints.",
     url: "https://dawsonwellsgallery.com",
     siteName: "Dawson Wells Gallery",
     images: [
@@ -47,11 +47,27 @@ export const metadata = {
         url: "/images/gallery/hero-interior.jpg",
         width: 1200,
         height: 630,
-        alt: "Dawson Wells Gallery Interior",
+        alt: "Dawson Wells Gallery — Elegant interior exhibition space featuring curated contemporary artworks",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dawson Wells Gallery | Modern & Contemporary Art",
+    description:
+      "Premier international gallery specializing in Modern and Contemporary Art across photography, oil paintings, drawings, ceramics, and prints.",
+    images: ["/images/gallery/hero-interior.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
 };
 

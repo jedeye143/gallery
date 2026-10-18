@@ -21,9 +21,33 @@ export async function generateMetadata({ params }) {
   const artwork = getArtworkBySlug(slug);
   if (!artwork) return { title: "Artwork Not Found | Dawson Wells Gallery" };
 
+  const description = `${artwork.title} (${artwork.year}) — ${artwork.medium}. ${artwork.description.slice(0, 120)}...`;
+
   return {
     title: `${artwork.title} by ${artwork.artist} | Dawson Wells Gallery`,
-    description: `${artwork.title} (${artwork.year}) - ${artwork.medium}. Available at Dawson Wells Gallery.`,
+    description,
+    openGraph: {
+      title: `${artwork.title} by ${artwork.artist}`,
+      description,
+      url: `https://dawsonwellsgallery.com/artworks/${slug}`,
+      siteName: "Dawson Wells Gallery",
+      images: [
+        {
+          url: artwork.images[0],
+          width: 1200,
+          height: 630,
+          alt: `${artwork.title} by ${artwork.artist} — ${artwork.medium}`,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${artwork.title} by ${artwork.artist}`,
+      description,
+      images: [artwork.images[0]],
+    },
   };
 }
 

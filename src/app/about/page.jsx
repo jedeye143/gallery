@@ -5,8 +5,30 @@ import { GALLERY_INFO } from "@/data/gallery";
 import styles from "./about.module.css";
 
 export const metadata = {
-  title: "About | Dawson Wells Gallery",
-  description: "Learn about Dawson Wells Gallery's history, mission, vision, and commitment to Modern and Contemporary Art.",
+  title: "About Us | Dawson Wells Gallery",
+  description: "Learn about Dawson Wells Gallery's history, mission, vision, and commitment to Modern and Contemporary Art since 2012.",
+  openGraph: {
+    title: "About Dawson Wells Gallery",
+    description: "Founded in 2012, Dawson Wells Gallery champions uncompromising artistic vision, representing 50+ artists across 3 continents.",
+    url: "https://dawsonwellsgallery.com/about",
+    siteName: "Dawson Wells Gallery",
+    images: [
+      {
+        url: "/images/gallery/about-gallery.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dawson Wells Gallery — About the gallery space and curation philosophy",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Dawson Wells Gallery",
+    description: "Founded in 2012, Dawson Wells Gallery champions uncompromising artistic vision, representing 50+ artists across 3 continents.",
+    images: ["/images/gallery/about-gallery.jpg"],
+  },
 };
 
 const STATS = [

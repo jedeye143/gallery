@@ -7,7 +7,29 @@ import styles from "./news.module.css";
 
 export const metadata = {
   title: "News & Updates | Dawson Wells Gallery",
-  description: "Stay updated with our latest exhibitions, events, art fair participations, and gallery news.",
+  description: "Stay updated with our latest exhibitions, events, art fair participations, and gallery news from Dawson Wells Gallery.",
+  openGraph: {
+    title: "News & Updates | Dawson Wells Gallery",
+    description: "Stay updated with our latest exhibitions, events, art fair participations, and gallery news.",
+    url: "https://dawsonwellsgallery.com/news",
+    siteName: "Dawson Wells Gallery",
+    images: [
+      {
+        url: "/images/news/news-exhibition.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dawson Wells Gallery — News & Exhibitions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "News & Updates | Dawson Wells Gallery",
+    description: "Stay updated with our latest exhibitions, events, art fair participations, and gallery news.",
+    images: ["/images/news/news-exhibition.jpg"],
+  },
 };
 
 export default function NewsPage() {
