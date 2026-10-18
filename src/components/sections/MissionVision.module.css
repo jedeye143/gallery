@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: flex-start;
+}
+
+.card {
+  padding: 1rem 0;
+}
+
+.verticalDivider {
+  background-color: var(--border-light);
+  width: 1px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .verticalDivider {
+    display: none;
+  }
+}

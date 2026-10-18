@@ -1,0 +1,23 @@
+/* Updated global layout for sidebar architecture */
+:root {
+  --sidebar-width-expanded: 260px;
+  --sidebar-width-collapsed: 72px;
+  --sidebar-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar layout wrapper */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  min-width: 0;
+  transition: margin-left var(--sidebar-transition);
+}
+
+/* Remove old header height variable usage */
+:root {
+  --header-height: 0px;
+}

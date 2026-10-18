@@ -1,0 +1,401 @@
+/* ── Backdrop Overlay ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 5, 4, 0.85);
+  backdrop-filter: blur(14px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  animation: fadeIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Split-Screen Dossier Container ── */
+.dossierModal {
+  position: relative;
+  background: #111110;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(197, 160, 89, 0.12);
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  overflow: hidden;
+  animation: scaleUp 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: #C5A059;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.closeBtn:hover {
+  background: #C5A059;
+  color: #111110;
+}
+
+/* ══════════════════════════════════════
+   LEFT PANEL — Artwork Preview Dossier
+══════════════════════════════════════ */
+.artworkPreviewPanel {
+  background: #090807;
+  padding: 2.25rem;
+  border-right: 1px solid rgba(197, 160, 89, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artworkFrameWrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border: 4px solid #111;
+  outline: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.artworkImg {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.frameGlare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.artworkMetaBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryTag {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: rgba(197, 160, 89, 0.8);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.artworkTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #F5EFE4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.15;
+}
+
+.artistName {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(220, 195, 145, 0.85);
+  margin: 0 0 1rem 0;
+}
+
+.specDivider {
+  height: 1px;
+  background: rgba(197, 160, 89, 0.2);
+  margin-bottom: 1rem;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+}
+
+.metaLabel {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(197, 160, 89, 0.6);
+  text-transform: uppercase;
+}
+
+.metaValue {
+  color: rgba(245, 239, 228, 0.75);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+/* ══════════════════════════════════════
+   RIGHT PANEL — Private Inquiry Form
+══════════════════════════════════════ */
+.formPanel {
+  padding: 2.5rem;
+  background: #111110;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.goldEyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #C5A059;
+  text-transform: uppercase;
+}
+
+.modalHeading {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #F5EFE4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Chip Selector */
+.reasonSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chipGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.reasonChip {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  color: rgba(245, 239, 228, 0.6);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.reasonChip:hover {
+  border-color: #C5A059;
+  color: #C5A059;
+}
+
+.reasonChipActive {
+  background: #C5A059 !important;
+  border-color: #C5A059 !important;
+  color: #111110 !important;
+}
+
+/* Form inputs */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fieldLabel {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(197, 160, 89, 0.7);
+  text-transform: uppercase;
+}
+
+.inputField,
+.textareaField {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #F5EFE4;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  padding: 0.75rem 0.9rem;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  width: 100%;
+}
+
+.inputField:focus,
+.textareaField:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #C5A059;
+}
+
+.textareaField {
+  resize: none;
+  line-height: 1.6;
+}
+
+.submitDossierBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #C5A059;
+  color: #111110;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  margin-top: 0.5rem;
+}
+
+.submitDossierBtn:hover {
+  background: #DCC391;
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.5);
+}
+
+/* ── Success State ── */
+.successState {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.successSeal {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #C5A059;
+  color: #111110;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+.successTitle {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #F5EFE4;
+  margin: 0.4rem 0 1rem 0;
+}
+
+.successBody {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(245, 239, 228, 0.7);
+  margin-bottom: 2rem;
+}
+
+.closeModalBtn {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  border: 1px solid #C5A059;
+  color: #C5A059;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.closeModalBtn:hover {
+  background: #C5A059;
+  color: #111110;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .dossierModal {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .artworkPreviewPanel {
+    border-right: none;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 1.5rem;
+  }
+  .formPanel {
+    padding: 1.5rem;
+  }
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+}

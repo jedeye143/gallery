@@ -1,0 +1,122 @@
+.pageRoot {
+  min-height: 100vh;
+  background-color: #FAFAF8;
+}
+
+/* ── Top Nav Sticky Bar ── */
+.topNav {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(250, 250, 248, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.topNavInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #777;
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.backLink:hover {
+  color: #C5A059;
+  gap: 0.9rem;
+}
+
+.topNavRef {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #C5A059;
+  text-transform: uppercase;
+}
+
+/* ── Main Section ── */
+.mainSection {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: flex-start;
+}
+
+.galleryCol {
+  width: 100%;
+}
+
+.infoCol {
+  position: sticky;
+  top: calc(var(--header-height, 0px) + 5rem);
+}
+
+/* ── Related Artworks Section ── */
+.relatedSection {
+  padding: clamp(4rem, 7vw, 6rem) 0;
+  background: #F4F2EC;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.relatedHeader {
+  margin-bottom: 2.5rem;
+}
+
+.relatedTag {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #C5A059;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.relatedTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  color: #1a1a18;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .infoCol {
+    position: static;
+  }
+  .topNavRef {
+    display: none;
+  }
+}

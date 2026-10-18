@@ -1,0 +1,204 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  min-height: 560px;
+  max-height: 900px;
+  overflow: hidden;
+  background-color: #0c0c0b;
+}
+
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Slide Layers ── */
+.imageBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.activeBg {
+  opacity: 1;
+  z-index: 2;
+}
+
+.inactiveBg {
+  opacity: 0;
+  z-index: 1;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Warm sepia-inspired color grade baked in via CSS filter */
+  filter: saturate(0.75) sepia(0.18) brightness(0.82) contrast(1.05);
+}
+
+/* ── Cinematic Multi-Layer Overlay ── */
+.cinematicOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  /* 
+    Layer 1: strong left-side shadow for text legibility
+    Layer 2: warm amber tint from bottom for cinematic warmth
+    Layer 3: cool dark vignette on edges
+  */
+  background:
+    /* Rich warm amber warmth rising from bottom */
+    linear-gradient(
+      to top,
+      rgba(30, 18, 8, 0.72) 0%,
+      rgba(20, 12, 5, 0.35) 35%,
+      transparent 65%
+    ),
+    /* Deep left-side shadow for text clarity */
+    linear-gradient(
+      to right,
+      rgba(10, 8, 6, 0.78) 0%,
+      rgba(10, 8, 6, 0.45) 35%,
+      rgba(10, 8, 6, 0.08) 65%,
+      transparent 100%
+    ),
+    /* Subtle top darkening */
+    linear-gradient(
+      to bottom,
+      rgba(8, 6, 4, 0.35) 0%,
+      transparent 25%
+    );
+}
+
+/* ── Content Wrapper ── */
+.contentWrapper {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: 2.5rem;
+}
+
+.textBlock {
+  max-width: 680px;
+}
+
+/* ── Headline — warm ivory tone, not pure white ── */
+.heroHeadline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 300;
+  color: #F5EFE4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.06;
+  display: flex;
+  flex-direction: column;
+  /* Layered text shadow for depth + warm glow */
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 60px rgba(197, 160, 89, 0.12);
+}
+
+.headlineLine {
+  display: block;
+}
+
+/* ── Subtitle — warm muted gold ── */
+.heroSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: rgba(220, 195, 145, 0.95);
+  margin-top: 1.75rem;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ── CTA Button ── */
+.ctaWrapper {
+  margin-top: 2.5rem;
+}
+
+.heroCta {
+  background-color: rgba(10, 8, 6, 0.25) !important;
+  color: #F5EFE4 !important;
+  border-color: rgba(220, 195, 145, 0.7) !important;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.2em !important;
+  transition: all 0.35s ease !important;
+}
+
+.heroCta:hover {
+  background-color: rgba(197, 160, 89, 0.9) !important;
+  color: #0c0c0b !important;
+  border-color: rgba(197, 160, 89, 0.9) !important;
+}
+
+/* ── Footer Bar ── */
+.heroFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.scrollIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(220, 195, 145, 0.8);
+}
+
+.slideIndicators {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.slideDot {
+  background: none;
+  border: none;
+  color: rgba(220, 195, 145, 0.45);
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.slideDot:hover {
+  color: rgba(220, 195, 145, 0.8);
+}
+
+.activeDot {
+  color: #DCC391;
+  font-weight: 700;
+  border-bottom: 1.5px solid #C5A059;
+}
+
+@media (max-width: 768px) {
+  .heroHeadline {
+    font-size: 2.1rem;
+  }
+  .scrollIndicator {
+    display: none;
+  }
+}

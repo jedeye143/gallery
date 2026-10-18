@@ -1,0 +1,284 @@
+.wallMount {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1rem 1.5rem;
+  background-color: #F4F1EA;
+  border: 1px solid var(--border-light);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Overhead Gallery Spotlight Glow */
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(244, 241, 234, 0) 75%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Exciting Museum Gallery Frame with Double Bevel & Gold Trim */
+.museumFrame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4/5;
+  background-color: #161514;
+  padding: 8px; /* Outer Frame Bevel */
+  border-radius: 2px;
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.32),
+    0 10px 20px -8px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(197, 160, 89, 0.4); /* Gold Bevel Inset */
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.wallMount:hover .museumFrame {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 30px 60px -12px rgba(0, 0, 0, 0.4),
+    0 14px 28px -10px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(197, 160, 89, 0.8);
+}
+
+.frameMolding {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #EFECE6;
+  padding: 6px; /* Inner Mat Board */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Glass Reflection Sheen on Hover */
+.glassReflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    transparent 60%
+  );
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.wallMount:hover .glassReflection {
+  opacity: 0.9;
+  transform: translate(6px, 6px);
+}
+
+.canvasContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.paintingCanvas {
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.wallMount:hover .paintingCanvas {
+  transform: scale(1.03);
+}
+
+/* Floating Hover Action Triggers */
+.hoverActions {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.35rem;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 90%;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.wallMount:hover .hoverActions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent-dark);
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  padding: 0.35rem 0.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  background-color: var(--accent-dark);
+  color: #ffffff;
+  border-color: var(--accent-dark);
+}
+
+/* 100% UNIFORM Museum Wall Plaque */
+.wallPlaque {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  height: 145px; /* UNIFORM HEIGHT */
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #FAF8F5;
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent-gold);
+  box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.plaqueHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.plaqueArtist {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plaqueCategory {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Title Truncated with (...) & Full Text Shown on Hover */
+.plaqueTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0.15rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wallMount:hover .plaqueTitle {
+  white-space: normal;
+  overflow: visible;
+}
+
+.plaqueTitle a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.plaqueTitle a:hover {
+  color: var(--text-secondary);
+}
+
+/* Medium & Year Truncated with (...) & Full Text Shown on Hover */
+.plaqueMediumYear {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wallMount:hover .plaqueMediumYear {
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Plaque Footer with Dimensions & Uniform INQUIRE Button */
+.plaqueFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.4rem;
+  border-top: 1px dashed var(--border-light);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.plaqueDimensions {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Uniform INQUIRE Button Aligned Right */
+.inquireBtn {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.15rem 0;
+  border-bottom: 1.5px solid var(--accent-dark);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.inquireBtn:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}

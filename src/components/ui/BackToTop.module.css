@@ -1,0 +1,17 @@
+.backToTop {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-dark);
+  color: var(--text-inverse);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.backToTop:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}

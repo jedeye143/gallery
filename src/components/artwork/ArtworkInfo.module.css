@@ -1,0 +1,306 @@
+.infoProspectus {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* ── Top Catalogue Header ── */
+.catalogueHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.catalogueRef {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #C5A059;
+  text-transform: uppercase;
+}
+
+.availabilityBadge {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #111110;
+  background: #F5F2EC;
+  padding: 0.25rem 0.65rem;
+  border-left: 2px solid #C5A059;
+  text-transform: uppercase;
+}
+
+/* ── Artist & Title ── */
+.artistSection {
+  margin-bottom: 1.75rem;
+}
+
+.artistName {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #C5A059;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.artworkTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  color: #1a1a18;
+  letter-spacing: 0.04em;
+  line-height: 1.08;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.artworkSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Tab Switcher Bar ── */
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.75rem;
+  gap: 1.5rem;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tabBtn:hover {
+  color: #111110;
+}
+
+.tabActive {
+  color: #111110 !important;
+  border-bottom-color: #C5A059 !important;
+}
+
+/* ── Tab Content ── */
+.tabContent {
+  margin-bottom: 2rem;
+  min-height: 140px;
+}
+
+.curatorialQuote {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #333;
+  margin: 0 0 1.75rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid #C5A059;
+  font-style: italic;
+}
+
+.quickSpecsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.quickSpecBox {
+  background: #F8F7F4;
+  padding: 1rem;
+  border-left: 2px solid rgba(197, 160, 89, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.quickLabel {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.quickValue {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #1a1a18;
+}
+
+/* Specs Table */
+.specsTable {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  transition: background 0.2s ease;
+}
+
+.specRow:last-child {
+  border-bottom: none;
+}
+
+.specRow:hover {
+  background: #F5F2EC;
+}
+
+.specLabel {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #111110;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+
+.specValue {
+  color: #555;
+  text-align: right;
+}
+
+/* Certificate Card */
+.certificateCard {
+  background: #F8F7F4;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.certSeal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #C5A059;
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+}
+
+.certTitle {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #111110;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.certBody {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.certList {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── CTA Block ── */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.primaryInquireBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.15rem 1.75rem;
+  background: #111110;
+  color: #F5EFE4;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.primaryInquireBtn:hover {
+  background: #C5A059;
+  color: #111110;
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
+}
+
+.secondaryActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #777;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+
+.actionBtn:hover {
+  color: #C5A059;
+}

@@ -1,0 +1,192 @@
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.viewAllLink {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 0.15rem;
+  transition: opacity 0.2s ease;
+}
+
+.viewAllLink:hover {
+  opacity: 0.6;
+}
+
+/* Editorial asymmetric grid layout */
+.editorialGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: 480px 280px;
+  gap: 3px;
+}
+
+/* Main feature — tall left, spans 2 rows */
+.mainFeature {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+/* Right column stack — 2 items in right column */
+.rightStack {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stackItem {
+  flex: 1;
+}
+
+/* Bottom items fill last column rows */
+.bottomItem {
+  grid-column: 3;
+}
+
+/* Shared item styles */
+.featuredItem {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background-color: var(--bg-secondary);
+  text-decoration: none;
+}
+
+.imageFill {
+  position: absolute;
+  inset: 0;
+}
+
+.featuredImg {
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.featuredItem:hover .featuredImg {
+  transform: scale(1.05);
+}
+
+/* Hover overlay */
+.featuredOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(17, 17, 17, 0.8) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem;
+  z-index: 2;
+}
+
+.featuredItem:hover .featuredOverlay {
+  opacity: 1;
+}
+
+.featuredInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transform: translateY(8px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.featuredItem:hover .featuredInfo {
+  transform: translateY(0);
+}
+
+.featuredCategory {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.featuredTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.featuredYear {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.12em;
+}
+
+.bottomCta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(3rem, 5vw, 4rem);
+}
+
+@media (max-width: 1024px) {
+  .editorialGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 380px 280px 280px;
+  }
+
+  .mainFeature {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .rightStack {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .bottomItem:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .bottomItem:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .editorialGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 260px);
+  }
+
+  .mainFeature,
+  .rightStack,
+  .bottomItem {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .rightStack {
+    flex-direction: row;
+    gap: 2px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

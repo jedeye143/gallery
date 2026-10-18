@@ -1,0 +1,43 @@
+/* Responsive Design Tweaks */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .grid-2col,
+  .grid-3col,
+  .grid-4col {
+    grid-template-columns: 1fr;
+  }
+
+  .heading-display {
+    font-size: 2.25rem;
+    letter-spacing: 0.08em;
+  }
+
+  .heading-lg {
+    font-size: 1.85rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}

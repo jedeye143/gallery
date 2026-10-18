@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.viewAll {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 0.15rem;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.viewAll:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,40 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F2EFE9;
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(26, 26, 26, 0.4);
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #6E6B65;
+  --text-muted: #9E9A92;
+  --text-inverse: #FAF8F5;
+
+  --accent-dark: #111111;
+  --accent-gold: #C5A059;
+
+  --border-light: #E5E1D8;
+  --border-subtle: #EFECE6;
+  --border-dark: #1A1A1A;
+
+  /* Typography */
+  --font-serif: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-jakarta), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 2rem;     /* 32px */
+  --space-lg: 4rem;     /* 64px */
+  --space-xl: 6rem;     /* 96px */
+  --space-2xl: 8rem;    /* 128px */
+
+  /* Layout */
+  --max-width: 1440px;
+  --header-height: 90px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-normal: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
