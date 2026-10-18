@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://dawsonwellsgallery.com/news/${slug}`,
+      url: `https://dawsongallery.vercel.app/news/${slug}`,
       siteName: "Dawson Wells Gallery",
       images: [
         {

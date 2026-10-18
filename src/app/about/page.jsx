@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "About Dawson Wells Gallery",
     description: "Founded in 2012, Dawson Wells Gallery champions uncompromising artistic vision, representing 50+ artists across 3 continents.",
-    url: "https://dawsonwellsgallery.com/about",
+    url: "https://dawsongallery.vercel.app/about",
     siteName: "Dawson Wells Gallery",
     images: [
       {

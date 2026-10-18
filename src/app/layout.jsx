@@ -19,7 +19,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://dawsonwellsgallery.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dawsongallery.vercel.app"
   ),
   title: {
     default: "Dawson Wells Gallery | Modern & Contemporary Art",
@@ -40,7 +40,7 @@ export const metadata = {
     title: "Dawson Wells Gallery | Modern & Contemporary Art",
     description:
       "Premier international gallery specializing in Modern and Contemporary Art across photography, oil paintings, drawings, ceramics, and prints.",
-    url: "https://dawsonwellsgallery.com",
+    url: "https://dawsongallery.vercel.app",
     siteName: "Dawson Wells Gallery",
     images: [
       {

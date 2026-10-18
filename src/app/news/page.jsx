@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "News & Updates | Dawson Wells Gallery",
     description: "Stay updated with our latest exhibitions, events, art fair participations, and gallery news.",
-    url: "https://dawsonwellsgallery.com/news",
+    url: "https://dawsongallery.vercel.app/news",
     siteName: "Dawson Wells Gallery",
     images: [
       {

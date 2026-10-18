@@ -6,7 +6,7 @@ export const metadata = {
     title: "Artworks Collection | Dawson Wells Gallery",
     description:
       "Explore our curated collection of Modern and Contemporary Art — photography, oil paintings, drawings, ceramics, and prints by leading international artists.",
-    url: "https://dawsonwellsgallery.com/artworks",
+    url: "https://dawsongallery.vercel.app/artworks",
     siteName: "Dawson Wells Gallery",
     images: [
       {

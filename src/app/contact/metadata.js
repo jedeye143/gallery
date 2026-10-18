@@ -6,7 +6,7 @@ export const metadata = {
     title: "Contact Dawson Wells Gallery",
     description:
       "Get in touch for artwork acquisition, exhibition inquiries, artist representation, or private viewings. Our advisors respond within 24 hours.",
-    url: "https://dawsonwellsgallery.com/contact",
+    url: "https://dawsongallery.vercel.app/contact",
     siteName: "Dawson Wells Gallery",
     images: [
       {
